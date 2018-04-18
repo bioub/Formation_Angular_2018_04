@@ -1,0 +1,31 @@
+<!--
+<div>
+  <input #elt>
+  <button (click)="todos.push(elt.value)">+</button>
+</div>
+-->
+<!--
+<div>
+  <input [value]="newTodo" (input)="newTodo = $event.target.value">
+  <button (click)="todos.push(newTodo)">+</button>
+</div>
+-->
+<!--
+<div>
+    <input [ngModel]="newTodo" (ngModelChange)="newTodo = $event">
+    <button (click)="todos.push(newTodo)">+</button>
+  </div>
+  -->
+<div>
+  <input type="checkbox" [ngModel]="doneAll" (ngModelChange)="toggleAll($event)">
+  <input [(ngModel)]="newTodo">
+  <button (click)="todos.push(newTodo)">+</button>
+</div>
+<ul>
+  <li *ngFor="let todo of todos; let isLast = last">
+    <input type="checkbox" [checked]="todo.done">
+    {{todo.value}}
+    <!--<button *ngIf="isLast" (click)="remove(todo)">-</button>-->
+    <button (click)="remove(todo)">-</button>
+  </li>
+</ul>

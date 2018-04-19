@@ -18,8 +18,8 @@
   -->
 <div>
   <input type="checkbox" [ngModel]="doneAll" (ngModelChange)="toggleAll($event)">
-  <input [(ngModel)]="newTodo">
-  <button (click)="todos.push(newTodo)">+</button>
+  <input [(ngModel)]="newTodo.value">
+  <button (click)="add(newTodo)">+</button>
 </div>
 <ul>
   <li *ngFor="let todo of todos; let isLast = last">

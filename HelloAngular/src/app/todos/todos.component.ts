@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodosComponent implements OnInit {
 
-  public newTodo = 'dnkjdghj';
+  public newTodo = {
+    done: false,
+    value: '',
+  };
   public doneAll = false;
   public todos = [
     {
@@ -47,5 +50,10 @@ export class TodosComponent implements OnInit {
   toggleAll(doneAll) {
     this.doneAll = doneAll;
     this.todos.forEach((todo) => todo.done = doneAll);
+  }
+
+  add(newTodo) {
+    const clone = {...newTodo}; // ES9
+    this.todos.push(clone);
   }
 }

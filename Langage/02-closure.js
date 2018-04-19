@@ -44,12 +44,12 @@ for (var i = 0; i < 3; i++) {
   }, 1000);
 }
 
-// Dans 1 sec : 3 3 3
+// Dans 1 sec : 0 1 2
 for (var i = 0; i < 3; i++) {
   setTimeout(externe(i), 1000);
 }
 
-// Dans 1 sec : 3 3 3
+// Dans 1 sec : 0 1 2
 for (let i = 0; i < 3; i++) {
   setTimeout(() => {
     console.log(i);

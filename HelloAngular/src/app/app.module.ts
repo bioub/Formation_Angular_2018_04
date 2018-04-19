@@ -5,13 +5,17 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HorlogeComponent } from './horloge/horloge.component';
 import { TodosComponent } from './todos/todos.component';
+import { CopyrightComponent } from './copyright/copyright.component';
+import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HorlogeComponent,
-    TodosComponent
+    TodosComponent,
+    CopyrightComponent,
+    ButtonToggleComponent
   ],
   imports: [
     FormsModule,

@@ -1,6 +1,6 @@
 // Les objets JS sont des systèmes clés / valeurs comme
 // - map
-// - dictionnary
+// - dictionary
 // - struct
 // - associative array
 // et pas du tout un concept statique comme en Java ou C#
@@ -52,6 +52,28 @@ const coords = {
 coords.z = 30;
 
 console.log(coords.x);
+console['log'](coords['x']);
+
+for (const key in coords) {
+  console.log('key', key);
+  console.log('value', coords[key]);
+}
+
+// ES6
+for (const key of Object.keys(coords)) {
+  console.log('key', key);
+  console.log('value', coords[key]);
+}
+
+// ES8
+for (const [key, value] of Object.entries(coords)) {
+  console.log('key', key);
+  console.log('value', value);
+}
+
+const myMath = {
+  sum: (a, b) => a + b,
+};
 
 // factory function
 // Utilisation :

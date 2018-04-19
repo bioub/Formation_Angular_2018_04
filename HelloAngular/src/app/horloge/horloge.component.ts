@@ -8,8 +8,6 @@ export class HorlogeComponent implements OnInit {
 
   public now = new Date();
 
-  constructor() { }
-
   ngOnInit() {
     setInterval(() => {
       this.now = new Date();

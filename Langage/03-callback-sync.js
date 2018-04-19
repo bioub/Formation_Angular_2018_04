@@ -10,9 +10,7 @@ console.log('Fin');
 
 function setTimeoutSync(cb, delay) {
   const debut = Date.now();
-
   while (Date.now() - debut < delay);
-
   cb();
 }
 

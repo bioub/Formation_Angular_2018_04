@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  public showMenu = false;
+  public showContacts = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleContacts(event: Event) {
+    event.preventDefault();
+    this.showContacts = !this.showContacts;
+  }
 }

@@ -1,0 +1,5 @@
+<form (submit)="add()">
+  <input type="checkbox" name="doneAll" [ngModel]="doneAll" (ngModelChange)="toggleAll($event)">
+  <input name="newTodo" [(ngModel)]="newTodo.value">
+  <button>+</button>
+</form>

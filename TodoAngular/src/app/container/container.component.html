@@ -1,3 +1,2 @@
-<p>
-  container works!
-</p>
+<todo-form (create)="todos.push($event)"></todo-form>
+<todo-list [todos]="todos"></todo-list>

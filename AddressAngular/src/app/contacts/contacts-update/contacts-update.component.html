@@ -1,0 +1,18 @@
+<form #form="ngForm" (submit)="form.valid && update()">
+  <div class="form-group">
+    <label>Nom</label>
+    <input type="text" name="name" class="form-control" [(ngModel)]="contact.name" required #name="ngModel" [ngClass]="{'is-invalid': name.invalid && (name.touched || form.submitted)}">
+    <div class="invalid-feedback" *ngIf="name.errors && name.errors['required']">
+      Le nom est obligatoire
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" name="email"  class="form-control" [(ngModel)]="contact.email">
+  </div>
+  <div class="form-group">
+    <label>Téléphone</label>
+    <input type="phone" name="phone"  class="form-control" [(ngModel)]="contact.phone">
+  </div>
+  <button type="submit" class="btn btn-primary">Modifier</button>
+</form>

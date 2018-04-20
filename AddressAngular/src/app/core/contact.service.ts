@@ -20,4 +20,8 @@ export class ContactService {
   add(contact) {
     return this.httpClient.post<Contact>('/users', contact);
   }
+
+  update(contact) {
+    return this.httpClient.put<Contact>(`/users/${contact.id}`, contact);
+  }
 }

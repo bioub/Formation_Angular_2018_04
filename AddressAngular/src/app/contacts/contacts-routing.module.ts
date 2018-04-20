@@ -1,3 +1,4 @@
+import { ContactsUpdateComponent } from './contacts-update/contacts-update.component';
 import { ContactsShowComponent } from './contacts-show/contacts-show.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { NgModule } from '@angular/core';
@@ -22,10 +23,22 @@ const routes: Routes = [{
     },
     {
       path: ':id',
-      component: ContactsShowComponent,
-      data: {
-        title: 'Afficher un contact',
-      },
+      children: [
+        {
+          path: '',
+          component: ContactsShowComponent,
+          data: {
+            title: 'Afficher un contact',
+          },
+        },
+        {
+          path: 'update',
+          component: ContactsUpdateComponent,
+          data: {
+            title: 'Modifier un contact',
+          },
+        }
+      ]
     },
   ]
 }];

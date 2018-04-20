@@ -4,13 +4,13 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" [ngClass]="{show: showMenu}">
+  <div class="collapse navbar-collapse" [collapse]="!showMenu">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" [ngClass]="{show: showContacts}" href="#" (click)="toggleContacts($event)">
+      <li class="nav-item dropdown" dropdown>
+        <a class="nav-link dropdown-toggle" dropdownToggle>
           Contacts
         </a>
-        <div class="dropdown-menu" [ngClass]="{show: showContacts}">
+        <div class="dropdown-menu" *dropdownMenu>
           <a class="dropdown-item" [routerLink]="['contacts']">Liste</a>
           <a class="dropdown-item" [routerLink]="['contacts', 'add']">Ajouter</a>
         </div>

@@ -1,4 +1,7 @@
+import { Router } from '@angular/router';
+import { Contact } from './../contact';
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from '../../core/contact.service';
 
 @Component({
   selector: 'ad-contacts-add',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsAddComponent implements OnInit {
 
-  constructor() { }
+  public contact = new Contact();
+
+  constructor(
+    private contactService: ContactService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
 
+  add() {
+    this.contactService.add(this.contact).subscribe((contact) => {
+      this.contactService.refresh.emit(contact);
+      this.router.navigate(['contacts', contact.id]);
+    });
+  }
 }

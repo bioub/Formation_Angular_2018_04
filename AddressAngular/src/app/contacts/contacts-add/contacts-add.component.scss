@@ -1,0 +1,13 @@
+/*
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+input.ng-touched.ng-invalid {
+  border: 2px solid $form-feedback-invalid-color;
+
+  ~ .invalid-feedback {
+    display: block;
+  }
+
+}
+*/

@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { CoreModule } from './../core/core.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -10,7 +11,7 @@ import { ContactsShowComponent } from './contacts-show/contacts-show.component';
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     ContactsRoutingModule
   ],
   declarations: [ContactsListComponent, ContactsAddComponent, ContactsComponent, ContactsShowComponent]

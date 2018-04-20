@@ -24,4 +24,7 @@ export class ContainerComponent implements OnInit {
   ngOnInit() {
   }
 
+  toggleAll(checked) {
+    this.todos.forEach((todo) => todo.done = checked);
+  }
 }

@@ -17,4 +17,9 @@ export class ListComponent implements OnInit {
 
   }
 
+  onRemove(todo) {
+    const i = this.todos.indexOf(todo);
+    this.todos.splice(i, 1);
+  }
+
 }

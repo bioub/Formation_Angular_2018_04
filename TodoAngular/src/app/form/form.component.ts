@@ -14,6 +14,9 @@ export class FormComponent implements OnInit {
   @Output()
   public create = new EventEmitter<Todo>();
 
+  @Output()
+  public toggle = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit() {
@@ -22,5 +25,9 @@ export class FormComponent implements OnInit {
   add() {
     const clone = {...this.newTodo};
     this.create.emit(clone);
+  }
+
+  toggleAll(checked) {
+    this.toggle.emit(checked);
   }
 }

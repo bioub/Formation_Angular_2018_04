@@ -1,1 +1,2 @@
-<todo-item *ngFor="let todo of todos" [todo]="todo"></todo-item>
+<todo-item *ngFor="let todo of todos"
+           [todo]="todo" (remove)="onRemove($event)"></todo-item>

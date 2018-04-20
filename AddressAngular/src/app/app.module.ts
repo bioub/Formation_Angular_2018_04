@@ -6,7 +6,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ContactsModule } from './contacts/contacts.module';
 
 
 @NgModule({
@@ -16,7 +15,6 @@ import { ContactsModule } from './contacts/contacts.module';
   imports: [
     CoreModule,
     SharedModule,
-    ContactsModule,
     BrowserModule,
     AppRoutingModule
   ],

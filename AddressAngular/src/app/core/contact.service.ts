@@ -7,14 +7,14 @@ export class ContactService {
   constructor(private httpClient: HttpClient) { }
 
   getAll() {
-    return this.httpClient.get('https://jsonplaceholder.typicode.com/users');
+    return this.httpClient.get('/users');
   }
 
   getById(id) {
-    return this.httpClient.get(`https://jsonplaceholder.typicode.com/users/${id}`);
+    return this.httpClient.get(`/users/${id}`);
   }
 
   add(contact) {
-    return this.httpClient.post('https://jsonplaceholder.typicode.com/users', contact);
+    return this.httpClient.post('/users', contact);
   }
 }

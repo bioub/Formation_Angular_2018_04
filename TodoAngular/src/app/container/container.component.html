@@ -1,2 +1,2 @@
-<todo-form (create)="todos.push($event)"></todo-form>
+<todo-form (create)="todos.unshift($event)" (toggle)="toggleAll($event)"></todo-form>
 <todo-list [todos]="todos"></todo-list>
